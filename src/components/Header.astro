@@ -1,0 +1,62 @@
+---
+---
+<header class="fixed w-full top-0 z-50 backdrop-blur-md border-b" id="main-header" style="background-color: rgba(20, 27, 45, 0.6); border-color: rgba(148, 163, 184, 0.1);">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold outfit tracking-wider" style="color: var(--text-primary);">
+            Toshiki<span style="color: var(--acc-cyan);">.</span>
+        </a>
+        <nav class="hidden md:flex gap-8 outfit text-sm tracking-widest font-semibold uppercase">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/business-skills" class="nav-link">Skills &amp; DX</a>
+            <a href="/works" class="nav-link">Works</a>
+            <a href="/contact" class="nav-link text-gold">Contact</a>
+        </nav>
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden focus-outline-none" style="color: var(--text-primary); background: transparent; border: none; cursor: pointer;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+    </div>
+</header>
+
+<style>
+    .nav-link {
+        color: var(--text-secondary);
+        position: relative;
+        text-decoration: none;
+    }
+    .nav-link:hover {
+        color: var(--text-primary);
+    }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: var(--acc-cyan);
+        transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+        width: 100%;
+    }
+    .text-gold {
+        color: var(--acc-gold) !important;
+    }
+    .text-gold::after {
+        background-color: var(--acc-gold) !important;
+    }
+</style>
+
+<script>
+    import gsap from 'gsap';
+    
+    document.addEventListener('astro:page-load', () => {
+        gsap.from('#main-header', {
+            y: -80,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+    });
+</script>

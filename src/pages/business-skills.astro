@@ -1,0 +1,366 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Business & Skills">
+    <!-- Three.js Visual Network Background -->
+    <canvas id="skills-webgl-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none;"></canvas>
+
+    <!-- Content Container -->
+    <div class="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-screen relative z-10" id="skills-container">
+        
+        <!-- Subtle Cyan Glow Effect -->
+        <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 800px; height: 400px; background: radial-gradient(circle, rgba(0,229,255,0.15) 0%, rgba(10,15,28,0) 70%); border-radius: 50%; pointer-events: none; z-index: 0;"></div>
+
+        <!-- Page Header -->
+        <header class="mb-24 text-center relative z-10">
+            <h1 class="outfit font-extrabold text-4xl md:text-6xl tracking-tight mb-4 scroll-reveal" style="color: var(--text-primary); text-shadow: 0 4px 12px rgba(0,229,255,0.1);">
+                BUSINESS <span style="color: var(--acc-cyan);">&amp;</span> SKILLS
+            </h1>
+            <p class="text-lg md:text-xl font-medium scroll-reveal delay-1" style="color: var(--text-secondary);">
+                データライクで知的なアプローチと、確固たるビジネス基盤。
+            </p>
+        </header>
+
+        <!-- Core Philosophy / Dual Advantage -->
+        <section class="mb-32 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="absolute inset-0 bg-surface opacity-50 -z-10 rounded-3xl blur-xl"></div>
+            
+            <div class="p-8 rounded-3xl border border-t border-b-0 border-r-0 scroll-reveal glass-card" style="border-color: rgba(0, 229, 255, 0.2); background: linear-gradient(135deg, rgba(20, 27, 45, 0.8) 0%, rgba(10, 15, 28, 0.4) 100%);">
+                <h2 class="outfit text-3xl font-bold mb-6" style="color: var(--acc-cyan);">Business &amp; DX</h2>
+                <p class="mb-4 leading-relaxed tracking-wide text-sm md:text-base" style="color: var(--text-secondary);">
+                    自動車メーカーでのDX推進担当として培った、大規模な組織でのプロジェクト進行力と要件定義能力。「何を作るべきか」という上流工程から深く入り込みます。
+                </p>
+                <ul class="space-y-3 mt-8">
+                    <li class="flex items-center gap-3">
+                        <span class="w-1_5 h-1_5 rounded-full" style="background-color: var(--acc-cyan);"></span>
+                        <span class="font-medium text-sm md:text-base" style="color: var(--text-primary);">徹底した「報連相」とビジネスコミュニケーション</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-1_5 h-1_5 rounded-full" style="background-color: var(--acc-cyan);"></span>
+                        <span class="font-medium text-sm md:text-base" style="color: var(--text-primary);">業務フローの可視化と最適化の提案</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-1_5 h-1_5 rounded-full" style="background-color: var(--acc-cyan);"></span>
+                        <span class="font-medium text-sm md:text-base" style="color: var(--text-primary);">関係者を巻き込むプロジェクトマネジメント</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="p-8 rounded-3xl border border-t border-b-0 border-r-0 scroll-reveal glass-card" style="border-color: rgba(240, 165, 0, 0.2); background: linear-gradient(135deg, rgba(20, 27, 45, 0.8) 0%, rgba(10, 15, 28, 0.4) 100%); transition-delay: 0.1s;">
+                <h2 class="outfit text-3xl font-bold mb-6" style="color: var(--acc-gold);">Engineering</h2>
+                <p class="mb-4 leading-relaxed tracking-wide text-sm md:text-base" style="color: var(--text-secondary);">
+                    Pythonを用いたデータ分析基盤の構築から、最新のフロントエンド技術を活用したモダンなWebアプリケーション開発まで。ビジネス要求を高度な技術で実現します。
+                </p>
+                <ul class="space-y-3 mt-8">
+                    <li class="flex items-center gap-3">
+                        <span class="w-1_5 h-1_5 rounded-full" style="background-color: var(--acc-gold);"></span>
+                        <span class="font-medium text-sm md:text-base" style="color: var(--text-primary);">クリーンで拡張性の高いアーキテクチャ設計</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-1_5 h-1_5 rounded-full" style="background-color: var(--acc-gold);"></span>
+                        <span class="font-medium text-sm md:text-base" style="color: var(--text-primary);">データ分析・機械学習を用いた価値創出</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-1_5 h-1_5 rounded-full" style="background-color: var(--acc-gold);"></span>
+                        <span class="font-medium text-sm md:text-base" style="color: var(--text-primary);">UI/UXに拘ったフロントエンド実装</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Technical Skill Metrics (Bar Charts) -->
+        <section class="mb-32 relative z-10">
+            <h2 class="outfit text-3xl md:text-4xl font-extrabold mb-12 text-center tracking-wider scroll-reveal" style="color: var(--text-primary);">TECHNICAL METRICS</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-8 p-8 rounded-3xl glass-card" style="background: rgba(20, 27, 45, 0.4); border: 1px solid rgba(148, 163, 184, 0.1);">
+                <!-- Skill Item -->
+                <div class="skill-item scroll-reveal delay-item">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold tracking-wider outfit" style="color: var(--text-primary);">Python (Backend / Data)</span>
+                        <span class="outfit font-medium" style="color: var(--acc-cyan);">95%</span>
+                    </div>
+                    <div class="h-2 w-full rounded-full bg-surface overflow-hidden">
+                        <div class="chart-bar h-full rounded-full" data-width="95%" style="background-color: var(--acc-cyan); width: 0%; box-shadow: 0 0 10px rgba(0,229,255,0.5);"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Item -->
+                <div class="skill-item scroll-reveal delay-item">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold tracking-wider outfit" style="color: var(--text-primary);">Business Architecture &amp; DX</span>
+                        <span class="outfit font-medium" style="color: var(--acc-gold);">90%</span>
+                    </div>
+                    <div class="h-2 w-full rounded-full bg-surface overflow-hidden">
+                        <div class="chart-bar h-full rounded-full" data-width="90%" style="background-color: var(--acc-gold); width: 0%; box-shadow: 0 0 10px rgba(240,165,0,0.5);"></div>
+                    </div>
+                </div>
+
+                <!-- Skill Item -->
+                <div class="skill-item scroll-reveal delay-item">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold tracking-wider outfit" style="color: var(--text-primary);">Modern Web Front-End (Astro/React)</span>
+                        <span class="outfit font-medium" style="color: var(--acc-cyan);">85%</span>
+                    </div>
+                    <div class="h-2 w-full rounded-full bg-surface overflow-hidden">
+                        <div class="chart-bar h-full rounded-full" data-width="85%" style="background-color: var(--acc-cyan); width: 0%; box-shadow: 0 0 10px rgba(0,229,255,0.5);"></div>
+                    </div>
+                </div>
+                
+                <!-- Skill Item -->
+                <div class="skill-item scroll-reveal delay-item">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold tracking-wider outfit" style="color: var(--text-primary);">Cloud Infrastructure (AWS/GCP)</span>
+                        <span class="outfit font-medium" style="color: var(--acc-gold);">80%</span>
+                    </div>
+                    <div class="h-2 w-full rounded-full bg-surface overflow-hidden">
+                        <div class="chart-bar h-full rounded-full" data-width="80%" style="background-color: var(--acc-gold); width: 0%; box-shadow: 0 0 10px rgba(240,165,0,0.5);"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section class="relative max-w-3xl mx-auto border-l border-surface pl-8 ml-4 md:ml-auto mb-16 z-10">
+            
+            <div class="relative mb-12 scroll-reveal timeline-item p-6 rounded-2xl glass-card" style="background: rgba(20, 27, 45, 0.4);">
+                <span class="absolute marker-dot rounded-full" style="background-color: var(--acc-cyan); box-shadow: 0 0 10px var(--acc-cyan);"></span>
+                <div class="outfit text-sm font-bold tracking-widest mb-2" style="color: var(--text-secondary);">2018 - PRESENT</div>
+                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">Automotive Corporation - DX Promotion</h3>
+                <p class="leading-relaxed text-sm md:text-base" style="color: var(--text-secondary);">
+                    社会人として7年間、巨大な組織での合意形成やビジネス要求の整理を経験。現場の課題をヒアリングし、技術（特にデータ分析やAI）を用いて業務効率化や新しい価値創出をリード。
+                </p>
+            </div>
+
+            <div class="relative scroll-reveal timeline-item delay-1 p-6 rounded-2xl glass-card" style="background: rgba(20, 27, 45, 0.4);">
+                <span class="absolute marker-dot rounded-full border-2 border-surface" style="background-color: var(--acc-gold);"></span>
+                <div class="outfit text-sm font-bold tracking-widest mb-2" style="color: var(--text-secondary);">FREELANCE</div>
+                <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">Independent Python Engineer</h3>
+                <p class="leading-relaxed text-sm md:text-base" style="color: var(--text-secondary);">
+                    会社員としての業務と並行し、個人事業主としても活動。スピード感のあるPoC開発からWebクローラー、データ基盤の構築まで、クライアントのビジネススピードを加速させるシステムを提供。
+                </p>
+            </div>
+            
+        </section>
+
+    </div>
+</BaseLayout>
+
+<style>
+    .grid { display: grid; }
+    .gap-12 { gap: 3rem; }
+    .gap-3 { gap: 0.75rem; }
+    .p-8 { padding: 2rem; }
+    .p-6 { padding: 1.5rem; }
+    .pt-32 { padding-top: 8rem; }
+    .pb-20 { padding-bottom: 5rem; }
+    .pl-8 { padding-left: 2rem; }
+    .ml-4 { margin-left: 1rem; }
+    .mb-16 { margin-bottom: 4rem; }
+    .mb-24 { margin-bottom: 6rem; }
+    .mb-32 { margin-bottom: 8rem; }
+    .border-l { border-left-width: 1px; border-left-style: solid; border-color: rgba(148, 163, 184, 0.2); }
+    .rounded-3xl { border-radius: 1.5rem; }
+    .rounded-2xl { border-radius: 1rem; }
+    .w-1_5 { width: 0.375rem; }
+    .h-1_5 { height: 0.375rem; }
+    
+    .marker-dot {
+        width: 1rem;
+        height: 1rem;
+        left: -57px; /* Adjusted based on the padding of the timeline container offset */
+        top: 1.5rem;
+    }
+    
+    .glass-card {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    
+    .bg-surface { background-color: var(--bg-surface); }
+    .opacity-50 { opacity: 0.5; }
+    .-z-10 { z-index: -10; }
+    .z-10 { z-index: 10; }
+    .blur-xl { filter: blur(24px); }
+    .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
+    .space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 2rem; }
+    .max-w-3xl { max-width: 48rem; }
+    .max-w-4xl { max-width: 56rem; }
+    .min-h-screen { min-height: 100vh; }
+    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+    .border-r-0 { border-right-width: 0; }
+    .border-b-0 { border-bottom-width: 0; }
+    .leading-relaxed { line-height: 1.625; }
+    .h-2 { height: 0.5rem; }
+    .h-full { height: 100%; }
+
+    @media (min-width: 768px) {
+        .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .md\:ml-auto { margin-left: auto; }
+        .md\:text-6xl { font-size: 3.75rem; line-height: 1; }
+    }
+</style>
+
+<script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import * as THREE from 'three';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('astro:page-load', () => {
+        
+        // 1. Reveal Elements on Scroll
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        
+        revealElements.forEach((el) => {
+            gsap.fromTo(el, 
+                { y: 40, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+
+        // 2. Animate Bar Charts
+        const bars = document.querySelectorAll('.chart-bar');
+        
+        bars.forEach((bar) => {
+            const targetWidth = bar.getAttribute('data-width');
+            
+            gsap.fromTo(bar,
+                { width: '0%' },
+                {
+                    width: targetWidth,
+                    duration: 1.5,
+                    ease: "power4.out",
+                    delay: 0.2, // slight delay after reveal
+                    scrollTrigger: {
+                        trigger: bar,
+                        start: "top 90%",
+                    }
+                }
+            );
+        });
+
+        // 3. Three.js Background Wireframes (Geometric Network)
+        const canvas = document.getElementById('skills-webgl-canvas') as HTMLCanvasElement;
+        if(!canvas) return;
+
+        // Cleanup previous instance if re-loaded via ViewTransitions
+        if((window as any).skillsRenderer) {
+            (window as any).skillsRenderer.dispose();
+            cancelAnimationFrame((window as any).skillsAnimationFrameId);
+        }
+
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x0a0f1c, 0.02);
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        (window as any).skillsRenderer = renderer;
+        
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.position.z = 25;
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // Icosahedrons as data nodes
+        const geo = new THREE.IcosahedronGeometry(1.2, 0);
+        // Adjustable opacity for subtle depth (increased slightly to ensure visibility)
+        const matCyan = new THREE.MeshBasicMaterial({ color: 0x00E5FF, wireframe: true, transparent: true, opacity: 0.1 });
+        const matGold = new THREE.MeshBasicMaterial({ color: 0xF0A500, wireframe: true, transparent: true, opacity: 0.08 });
+
+        const nodes: THREE.Mesh[] = [];
+        for(let i=0; i<40; i++) {
+            const mesh = new THREE.Mesh(geo, Math.random() > 0.7 ? matGold : matCyan);
+            mesh.position.set(
+                (Math.random() - 0.5) * 60,
+                (Math.random() - 0.5) * 60,
+                (Math.random() - 0.5) * 30 - 5
+            );
+            mesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+            const s = Math.random() * 1.5 + 0.5;
+            mesh.scale.set(s, s, s);
+            group.add(mesh);
+            nodes.push(mesh);
+        }
+
+        // Connection network lines between nodes
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x00E5FF, transparent: true, opacity: 0.06 });
+        const lineGeo = new THREE.BufferGeometry();
+        const positions = [];
+        
+        for(let i=0; i<nodes.length; i++) {
+            let connections = 0;
+            for(let j=i+1; j<nodes.length; j++) {
+                if(nodes[i].position.distanceTo(nodes[j].position) < 20 && connections < 4) {
+                    positions.push(
+                        nodes[i].position.x, nodes[i].position.y, nodes[i].position.z,
+                        nodes[j].position.x, nodes[j].position.y, nodes[j].position.z
+                    );
+                    connections++;
+                }
+            }
+        }
+        lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+        const lines = new THREE.LineSegments(lineGeo, lineMat);
+        group.add(lines);
+
+        // Mouse Tracking
+        let mouseX = 0; let mouseY = 0;
+        let targetX = 0; let targetY = 0;
+
+        const handleMouseMove = (e: MouseEvent) => {
+            mouseX = (e.clientX - window.innerWidth / 2);
+            mouseY = (e.clientY - window.innerHeight / 2);
+        };
+        document.addEventListener('mousemove', handleMouseMove);
+
+        const animate = () => {
+            (window as any).skillsAnimationFrameId = requestAnimationFrame(animate);
+            targetX = mouseX * 0.0005;
+            targetY = mouseY * 0.0005;
+
+            // Parallax interaction + Slow automatic rotation
+            group.rotation.x += 0.02 * (targetY - group.rotation.x);
+            group.rotation.y += 0.02 * (targetX - group.rotation.y);
+            group.rotation.x += 0.0002;
+            group.rotation.y += 0.0005;
+            
+            // Re-rotate nodes individually slowly
+            nodes.forEach(node => {
+                node.rotation.x += 0.001;
+                node.rotation.y += 0.002;
+            });
+
+            renderer.render(scene, camera);
+        };
+        animate();
+
+        const handleResize = () => {
+            if(!renderer) return;
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        };
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup
+        document.addEventListener('astro:before-swap', () => {
+            cancelAnimationFrame((window as any).skillsAnimationFrameId);
+            window.removeEventListener('resize', handleResize);
+            document.removeEventListener('mousemove', handleMouseMove);
+        }, { once: true });
+    });
+</script>

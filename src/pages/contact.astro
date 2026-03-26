@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact & Terms">
+    <div class="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-screen relative z-10" id="contact-container">
+        
+        <!-- Subtle Glow Effect -->
+        <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 800px; height: 500px; background: radial-gradient(circle, rgba(240,165,0,0.06) 0%, transparent 60%); border-radius: 50%; pointer-events: none; z-index: -5;"></div>
+
+        <!-- Page Header (Maintains the 10rem margin-top fix) -->
+        <header class="mb-20 text-center relative z-10" style="margin-top: 10rem;">
+            <h1 class="outfit font-extrabold text-4xl md:text-6xl tracking-tight scroll-reveal" style="color: var(--text-primary);">
+                GET IN <span style="color: var(--acc-gold);">TOUCH</span>
+            </h1>
+            <p class="text-sm md:text-base font-medium scroll-reveal delay-1 mt-6" style="color: var(--text-secondary);">
+                開発のご依頼やご相談はこちらから。稼働条件をご確認の上、お気軽にご連絡ください。
+            </p>
+        </header>
+
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
+            
+            <!-- Left Column: Terms & Communication -->
+            <section class="scroll-reveal glass-card p-8 md:p-10 rounded-3xl h-full flex flex-col justify-center" style="background-color: var(--bg-surface); border: 1px solid rgba(148, 163, 184, 0.15);">
+                <div class="mb-8">
+                    <h2 class="outfit text-3xl font-bold mb-4" style="color: var(--acc-cyan);">Business Terms</h2>
+                    <p class="leading-relaxed text-sm md:text-base" style="color: var(--text-secondary);">
+                        クライアント様にとって「安心して丸投げできるパートナー」であるために、ご契約前に以下の稼働条件とコミュニケーション方針についてご確認をお願いいたします。
+                    </p>
+                </div>
+                
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 p-2 rounded-full flex-shrink-0" style="background-color: rgba(0, 229, 255, 0.1); color: var(--acc-cyan);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base mb-1" style="color: var(--text-primary);">稼働可能時間</h3>
+                            <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">平日 19:00以降 / 土日 12:00以降<br><span style="font-size: 0.7rem; opacity: 0.7;">※土日等でまとまった開発の時間を確保いたします。</span></p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 p-2 rounded-full flex-shrink-0" style="background-color: rgba(0, 229, 255, 0.1); color: var(--acc-cyan);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14v-4z"></path><rect x="3" y="6" width="12" height="12" rx="2" ry="2"></rect></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base mb-1" style="color: var(--text-primary);">ミーティング方針</h3>
+                            <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">日中のWebミーティングは原則不可とさせていただきます。<br><span style="font-size: 0.7rem; opacity: 0.7;">※必要な場合は事前に平日の19時以降でご調整いたします。</span></p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 p-2 rounded-full flex-shrink-0" style="background-color: rgba(240, 165, 0, 0.1); color: var(--acc-gold);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base mb-1" style="color: var(--text-primary);">連絡手段と強み</h3>
+                            <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">チャットツールでのテキストコミュニケーション進行を重視します。<br>社会人7年目の徹底した「報連相」とビジネスマナーにより、非同期テキストだけでも要件のブレを防ぎ、安心・安全な進行をお約束します。</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Right Column: Formspree Form -->
+            <section class="scroll-reveal delay-1 glass-card p-8 md:p-10 rounded-3xl h-full flex flex-col justify-center" style="background-color: var(--bg-surface); border: 1px solid rgba(148, 163, 184, 0.15);">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6 flex flex-col h-full">
+                    
+                    <div>
+                        <label for="name" class="block text-sm font-bold tracking-wider outfit mb-2" style="color: var(--text-primary);">NAME</label>
+                        <!-- Safely applied padding using strictly inline style tracking -->
+                        <input type="text" id="name" name="name" required class="w-full bg-deep rounded-xl text-primary outline-none focus:ring-2 focus:ring-gold transition-all duration-300 shadow-inner" style="padding: 1rem 1.5rem;" placeholder="山田 太郎" />
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-bold tracking-wider outfit mb-2" style="color: var(--text-primary);">EMAIL</label>
+                        <input type="email" id="email" name="email" required class="w-full bg-deep rounded-xl text-primary outline-none focus:ring-2 focus:ring-gold transition-all duration-300 shadow-inner" style="padding: 1rem 1.5rem;" placeholder="your@email.com" />
+                    </div>
+
+                    <div class="flex-grow">
+                        <label for="message" class="block text-sm font-bold tracking-wider outfit mb-2" style="color: var(--text-primary);">MESSAGE</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full h-40 resize-none bg-deep rounded-xl text-primary outline-none focus:ring-2 focus:ring-gold transition-all duration-300 shadow-inner" style="padding: 1rem 1.5rem;" placeholder="プロジェクトの概要やご相談内容を記載してください。"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full mt-6 py-4 flex items-center justify-center gap-3 font-bold outfit tracking-widest uppercase submit-ghost-btn" style="background: transparent; border: none; cursor: pointer; color: var(--acc-cyan);">
+                        <span style="font-size: 1.05rem;">SEND MESSAGE</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ghost-arrow">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+            </section>
+
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .grid { display: grid; }
+    .items-stretch { align-items: stretch; }
+    .items-start { align-items: flex-start; }
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .justify-center { justify-content: center; }
+    .flex-shrink-0 { flex-shrink: 0; }
+    .space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.5rem; }
+    .gap-12 { gap: 3rem; }
+    .gap-4 { gap: 1rem; }
+    .w-full { width: 100%; }
+    .h-full { height: 100%; }
+    .h-40 { height: 10rem; }
+    .flex-grow { flex-grow: 1; }
+    .rounded-3xl { border-radius: 1.5rem; }
+    .rounded-xl { border-radius: 0.75rem; }
+    .rounded-full { border-radius: 9999px; }
+    .p-8 { padding: 2rem; }
+    .p-4 { padding: 1rem; }
+    .block { display: block; }
+    .bg-deep { background-color: var(--bg-deep); }
+    .text-primary { color: var(--text-primary); }
+    .outline-none { outline: 2px solid transparent; outline-offset: 2px; }
+    .shadow-inner { box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.4); }
+    .resize-none { resize: none; }
+    
+    /* Clean inputs that blend nicely into the dark layout */
+    input, textarea {
+        box-sizing: border-box;
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        color: var(--text-primary);
+        font-family: inherit;
+    }
+    input:focus, textarea:focus {
+        border-color: var(--acc-gold);
+        box-shadow: 0 0 0 1px var(--acc-gold);
+    }
+    input::placeholder, textarea::placeholder {
+        color: rgba(148, 163, 184, 0.4);
+    }
+    
+    .glass-card {
+        box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
+    }
+    .submit-ghost-btn {
+        opacity: 0.85;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .submit-ghost-btn:hover {
+        opacity: 1;
+        text-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+    }
+    .ghost-arrow {
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .submit-ghost-btn:hover .ghost-arrow {
+        transform: translateX(8px);
+    }
+
+    @media (min-width: 1024px) {
+        .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .lg\:p-10 { padding: 2.5rem; }
+        .lg\:gap-20 { gap: 5rem; }
+    }
+</style>
+
+<script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('astro:page-load', () => {
+        const reveals = document.querySelectorAll('.scroll-reveal');
+        
+        reveals.forEach((el) => {
+            gsap.fromTo(el, 
+                { y: 40, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    delay: el.classList.contains('delay-1') ? 0.3 : 0,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+    });
+</script>
