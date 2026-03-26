@@ -20,10 +20,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 ただコードを書くだけではない、<span style="color: var(--text-primary); font-weight: bold;">「任せて安心できる」</span>開発パートナーとして。
             </p>
             
-            <div class="mt-12 delay-fade">
-                <a href="/business-skills" class="inline-flex items-center gap-2 pb-1 border-b-2" style="border-color: var(--acc-cyan); color: var(--text-primary); transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
-                    <span class="outfit tracking-widest font-semibold uppercase text-sm">Explore My Skills</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12 scroll-reveal delay-2">
+                <a href="/portfolio/works" class="px-8 py-4 rounded-full font-bold outfit tracking-widest transition-transform hover:scale-105 inline-flex items-center justify-center relative overflow-hidden group" style="background-color: var(--acc-cyan); color: #000;">
+                    <span class="relative z-10">Explore Works</span>
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transform: skewX(-20deg); animation: shine 1.5s infinite;"></div>
+                </a>
+                <a href="/portfolio/business-skills" class="inline-flex items-center gap-2 pb-1 border-b-2" style="border-color: var(--acc-cyan); color: var(--text-primary); transition: opacity 0.3s;" onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+                    <span>View Business Skills</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--acc-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
             </div>
         </div>
